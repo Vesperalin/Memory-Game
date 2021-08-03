@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo Game</title>
+    <link rel="stylesheet" href="styles/common-styles.css">
+    <link rel="stylesheet" href="styles/ranking-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="results-wrapper">
+        <header>
+            <h1>Ranking</h1>
+        </header>
+
+        <div class="ranking">
+            <div class="easy-level ranking-column">
+                <h2>Easy level</h2>
+                <div class="result">
+                    <p>Time: 21min 33s</p>
+                    <p>Guessed: 20/20 pairs</p>
+                    <p>Moves: 40</p>
+                </div>
+
+                <div class="medium-level ranking-column">
+                    <h2>Medium level</h2>
+                    <div class="result">
+                        <p>Time: 56min 06s</p>
+                        <p>Guessed: 20/40 pairs</p>
+                        <p>Moves: 120</p>
+                    </div>
+                </div>
+
+                <div class="hard-level ranking-column">
+                    <h2>Hard level</h2>
+                    <div class="result">
+                        <p>Time: 1h 34min 28s</p>
+                        <p>Guessed: 55/60 pairs</p>
+                        <p>Moves: 201</p>
+                    </div>
+                </div>
+
+                <div class="mobile ranking-column">
+                    <h2>Mobile</h2>
+                    <div class="result">
+                        <p>Time: 10min 26s</p>
+                        <p>Guessed: 5/5 pairs</p>
+                        <p>Moves: 20</p>
+                    </div>
+                </div>
+            </div>
+            <!-- these divs with class of result will be generated in js, but i put few of these to test css styles first-->
+
+            <div class="back-button-wrapper">
+                <a class="button" href="index.html">Back to menu</a>
+            </div>
+        </div>
+
+        <script src="scripts/ranking-script.js"></script>
+</body>
+
+</html>
