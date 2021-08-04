@@ -1,3 +1,18 @@
 /* styles specific for index.html page */
 
-/* background */
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.menu-wrapper {
+    background: url(/images/background.svg) 40% 40%/cover no-repeat #F7F7F7;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-wrapper {
+        background-position: bottom 0% right 20%;
+    }
+}
