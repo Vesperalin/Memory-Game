@@ -3,14 +3,45 @@
 * {
     box-sizing: border-box;
     border: 0;
+    font-family: 'Lexend Deca', sans-serif;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
-/* h1 in header */
+header h1 {
+    color: #E98580;
+    font-family: 'Lato', sans-serif;
+    font-size: 6rem;
+    padding-top: 100px;
+    text-align: center;
+    text-shadow: 1px 1px #DDD;
+}
 
-/* class button */
+.button {
+    align-content: center;
+    background-color: #FDD2BF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #DF5E5E;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    height: 50px;
+    justify-content: center;
+    margin: 25px auto;
+    width: 230px;
+}
 
-/* footer */
+footer {
+    color: #DF5E5E;
+    width: 100%;
+}
+
+
+footer a {
+    text-decoration: underline;
+    color: #DF5E5E;
+}
 
 /* hour, minutes, seconds - classes in game.html */

@@ -5,11 +5,26 @@ body {
     width: 100vw;
 }
 
+nav {
+    margin-top: 80px;
+}
+
+li {
+    list-style-type: none
+}
+
 .menu-wrapper {
-    background: url(/images/background.svg) 40% 40%/cover no-repeat #F7F7F7;
+    /*background: url(/images/background.svg) 40% 40%/cover no-repeat #F7F7F7;*/
+    background-image: url(/images/background.svg);
+    background-position: 40% 40%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #F7F7F7;
     height: 100%;
+    text-align: center;
     width: 100%;
 }
+
 
 @media screen and (max-width: 600px) {
     .menu-wrapper {
