@@ -1,7 +1,5 @@
-/* styles specific for index.html page */
-
 body {
-    /*height: 100vh;*/
+    height: 100vh;
     width: 100vw;
 }
 
@@ -16,7 +14,7 @@ li {
 .menu-wrapper {
     /*background: url(/images/background.svg) 40% 40%/cover no-repeat #F7F7F7;*/
     background-image: url(/images/background.svg);
-    background-position: 40% 40%;
+    background-position: 70% 70%;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #F7F7F7;
@@ -27,20 +25,47 @@ li {
     width: 100%;
 }
 
-
 @media screen and (max-width: 600px) {
-    .menu-wrapper {
-        background-position: bottom 0% right 20%;
-    }
-
     nav {
         margin-top: 80px;
     }
+    .menu-wrapper {
+        background-position: bottom 0% right 20%;
+    }
 }
 
-/*@media screen and (max-height: 800px) {
-    nav {
-        background-color: black;
+@media screen and (max-height: 490px) {
+    body {
+        height: auto;
     }
+    header h1 {
+        font-size: 3.5rem;
+        padding-top: 40px;
+    }
+    nav {
+        margin-top: 20px;
+    }
+    footer {
+        font-size: 0.7rem;
+        position: static;
+    }
+    .button {
+        border-radius: 5px;
+        font-size: 1.3rem;
+        height: 45px;
+        margin: 20px auto;
+        width: 170px;
+    }
+    .menu-wrapper {
+        position: static;
+    }
+}
 
-}*/
+@media screen and (max-height: 630px) {
+    nav {
+        margin-top: 40px;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+}

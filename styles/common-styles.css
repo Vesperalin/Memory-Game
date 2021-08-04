@@ -18,6 +18,18 @@ header h1 {
     text-shadow: 2px 2px #DDD;
 }
 
+footer {
+    bottom: 5px;
+    color: #DF5E5E;
+    position: absolute;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: underline;
+    color: #DF5E5E;
+}
+
 .button {
     align-content: center;
     background-color: #FDD2BF;
@@ -33,55 +45,70 @@ header h1 {
     width: 230px;
 }
 
-footer {
-    bottom: 5px;
-    color: #DF5E5E;
-    position: absolute;
-    width: 100%;
-}
-
-footer a {
-    text-decoration: underline;
-    color: #DF5E5E;
-}
-
 @media screen and (max-width: 600px) {
     header h1 {
         font-size: 4.2rem;
         padding-top: 80px;
     }
-
+    footer {
+        font-size: 0.9rem;
+    }
     .button {
         border-radius: 10px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         font-size: 1.3rem;
         height: 45px;
         margin: 20px auto;
         width: 170px;
     }
-
-    footer {
-        font-size: 0.9rem;
-    }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 490px) {
     header h1 {
         font-size: 3.5rem;
-        padding-top: 80px;
+        padding-top: 40px;
     }
-
-    .button {
-        border-radius: 5px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-size: 1rem;
-        height: 40px;
-        width: 150px;
-    }
-
     footer {
         font-size: 0.7rem;
     }
+    .button {
+        border-radius: 5px;
+        font-size: 1.1rem;
+        height: 42px;
+        width: 160px;
+    }
 }
+
+@media screen and (max-height: 720px) {
+    header h1 {
+        font-size: 4.2rem;
+        padding-top: 80px;
+    }
+    footer {
+        font-size: 0.9rem;
+    }
+    .button {
+        font-size: 1.3rem;
+        height: 45px;
+        margin: 20px auto;
+        width: 170px;
+    }
+}
+
+@media screen and (max-height: 630px) {
+    header h1 {
+        font-size: 3.5rem;
+        padding-top: 70px;
+    }
+    .button {
+        border-radius: 5px;
+        font-size: 1.1rem;
+        height: 42px;
+        width: 160px;
+    }
+}
+
+
+
+
 
 /* hour, minutes, seconds - classes in game.html */
