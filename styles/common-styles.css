@@ -15,7 +15,7 @@ header h1 {
     font-size: 6rem;
     padding-top: 100px;
     text-align: center;
-    text-shadow: 1px 1px #DDD;
+    text-shadow: 2px 2px #DDD;
 }
 
 .button {
@@ -34,14 +34,54 @@ header h1 {
 }
 
 footer {
+    bottom: 5px;
     color: #DF5E5E;
+    position: absolute;
     width: 100%;
 }
-
 
 footer a {
     text-decoration: underline;
     color: #DF5E5E;
+}
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 4.2rem;
+        padding-top: 80px;
+    }
+
+    .button {
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 1.3rem;
+        height: 45px;
+        margin: 20px auto;
+        width: 170px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    header h1 {
+        font-size: 3.5rem;
+        padding-top: 80px;
+    }
+
+    .button {
+        border-radius: 5px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: 1rem;
+        height: 40px;
+        width: 150px;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
 }
 
 /* hour, minutes, seconds - classes in game.html */
