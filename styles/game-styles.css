@@ -1,22 +1,100 @@
 /* styles specific for game.html page */
 
-/* game-wrapper class */
+body {
+    background-color: #F9FAED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* utilities-wrapper class */
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    padding-top: 50px;
+    width: 70%;
+    height: 100vh;
+    width: 100vh;
+}
+
+.utilities-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* moves-wrapper class */
 
 /* timer-wrapper class */
 
-/* field */
+.field {
+    align-items: center;
+    background-color: #CCCC04;
+    border-radius: 5px;
+    border: 2px solid #1F1F1F;
+    color: #1F1F1F;
+    display: flex;
+    font-size: 1.4rem;
+    height: 40px;
+    justify-content: center;
+    width: 200px;
+}
 
 /* board-wrapper class */
 
+.board-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 510px;
+    justify-content: space-between;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    padding: 5%;
+    width: 510px;
+}
+
 /* card class */
+
+.card, .back, .front {
+    border-radius: 10%;
+    height: 95px;
+    width: 95px;
+    cursor: pointer;
+}
+
+.card {
+    border: 2px solid #1F1F1F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.front {
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.back {
+    background: #CCCC04;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
 
 /* giveup-wrapper class */
 
-/* popup-wrapper class */
+.popup-wrapper {
+    display: none;
+}
 
 /* popup class */
 
@@ -24,4 +102,6 @@
 
 /* popup-content */
 
-/* hour, minutes, seconds classes */ 
+/* hour, minutes, seconds classes */
+
+@media screen and (min-width: 1025px) {}

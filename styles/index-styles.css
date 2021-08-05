@@ -1,7 +1,7 @@
 /* styles specific for index.html page */
 
 .menu-wrapper {
-    background: url(/images/background.svg) 80% 80%/cover no-repeat #F7F7F7;
+    background: url(/images/background.svg) 80% 80%/cover no-repeat #F9FAED;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
