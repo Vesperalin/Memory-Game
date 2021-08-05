@@ -1,16 +1,115 @@
-/* common styles for all pages */
+/* common styles for all pages - mobile first*/
 
 * {
     box-sizing: border-box;
     border: 0;
+    font-family: 'Lexend Deca', sans-serif;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
-/* h1 in header */
+body {
+    min-height: 100vh;
+    width: 100vw;
+}
 
-/* class button */
+header h1 {
+    color: #E98580;
+    font-family: 'Lato', sans-serif;
+    font-size: 3.6rem;
+    padding-top: 60px;
+    text-align: center;
+    text-shadow: 2px 2px #DDD;
+}
 
-/* footer */
+footer {
+    color: #DF5E5E;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: underline;
+    color: #DF5E5E;
+}
+
+.button {
+    align-content: center;
+    background-color: #FDD2BF;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #DF5E5E;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    height: 42px;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto;
+    width: 160px;
+}
 
 /* hour, minutes, seconds - classes in game.html */
+
+
+
+@media screen and (min-width: 481px) {
+    header h1 {
+        font-size: 4.5rem;
+        padding-top: 70px;
+    }
+    
+    footer {
+        font-size: 0.9rem;
+    }
+    
+    .button {
+        border-radius: 10px;
+        font-size: 1.2rem;
+        height: 50px;
+        margin: 25px auto;
+        width: 190px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    header h1 {
+        font-size: 5rem;
+        padding-top: 80px;
+    }
+    
+    footer {
+        font-size: 1rem;
+    }
+    
+    .button {
+        border-radius: 10px;
+        font-size: 1.5rem;
+        height: 60px;
+        margin: 30px auto;
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    header h1 {
+        font-size: 6rem;
+        padding-top: 100px;
+    }
+    
+    footer {
+        font-size: 1.2rem;
+    }
+    
+    .button {
+        border-radius: 10px;
+        font-size: 1.8rem;
+        height: 65px;
+        margin: 30px auto;
+        width: 240px;
+    }
+}
+
+/* to do - zmienić wielkości elementów, animacje na przyciskach */
