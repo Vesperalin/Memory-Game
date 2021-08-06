@@ -8,25 +8,37 @@ body {
 }
 
 .game-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100vh;
-    padding-top: 50px;
     width: 70%;
     height: 100vh;
-    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .utilities-wrapper {
     display: flex;
     justify-content: space-between;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 
-/* moves-wrapper class */
-
-/* timer-wrapper class */
+.board-wrapper {
+    width: 560px;
+    height: 560px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
 .field {
     align-items: center;
@@ -41,56 +53,34 @@ body {
     width: 200px;
 }
 
-/* board-wrapper class */
-
-.board-wrapper {
+.card {
+    background-color: #AAAA02;
+    border-radius: 5px;
+    border: 2px solid #1F1F1F;
     display: flex;
-    flex-wrap: wrap;
-    height: 510px;
-    justify-content: space-between;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    padding: 5%;
-    width: 510px;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 120px;
+    width: 120px;
+    margin: 10px;
 }
 
-/* card class */
-
-.card, .back, .front {
-    border-radius: 10%;
-    height: 95px;
-    width: 95px;
+.card:hover {
+    background-color: #999901;
+    transform: scale(0.97);
+    transition: transform 0.2s;
     cursor: pointer;
 }
 
-.card {
-    border: 2px solid #1F1F1F;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
-    position: relative;
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
+.front-face {
+    display: inline-block;
+    width: 100%;
+    height: 50%;
 }
 
-.front {
-    transform: rotateY(180deg);
-    position: absolute;
-    backface-visibility: hidden;
+.back-face {
+    display: none;
 }
-
-.back {
-    background: #CCCC04;
-    position: absolute;
-    backface-visibility: hidden;
-}
-
-.card.flip {
-    transform: rotateY(180deg);
-}
-
-/* giveup-wrapper class */
 
 .popup-wrapper {
     display: none;
@@ -103,5 +93,3 @@ body {
 /* popup-content */
 
 /* hour, minutes, seconds classes */
-
-@media screen and (min-width: 1025px) {}
