@@ -20,6 +20,11 @@ let cardsNames = availableCardsNames.slice(0, (() => {
         return 4;
 })());
 
+if (gameLevel == 0)
+    board.style.height = "280px";
+else if (gameLevel == 1)
+    board.style.height = "420px";
+
 cardsNames = cardsNames.concat(cardsNames).sort((a, b) => Math.random() - 0.5);
 
 for (let i = 0; i < cardsNames.length; i++) {

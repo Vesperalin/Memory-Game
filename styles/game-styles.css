@@ -96,6 +96,34 @@ body {
     display: none;
 }
 
+@media screen and (max-width: 812px) and (max-height: 812px) {
+    .game-wrapper {
+        width: 100vh;
+    }
+
+    .utilities-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .board-wrapper {
+        height: 180px;
+        width: 360px;
+    }
+    
+    .field {
+        font-size: 1rem;
+        height: 30px;
+        width: 110px;
+    }
+    
+    .card {
+        height: 70px;
+        margin: 5px;
+        width: 70px;
+    }
+}
+
 /* popup class */
 
 /* popup-close */
