@@ -77,6 +77,8 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
+    firstCard.removeAttribute("onclick");
+    secondCard.removeAttribute("onclick");
 
     resetBoard();
 }
@@ -107,13 +109,7 @@ let backs = document.querySelectorAll('.back-face');
     console.log(e);
     e.style.display = "none";
 });
-
 backs.forEach(e => {
     e.style.display = "inline-block";
 });*/
-
-
-
-
-
 
