@@ -1,22 +1,128 @@
 /* styles specific for game.html page */
 
-/* game-wrapper class */
+body {
+    align-items: center;
+    background-color: #F9FAED;
+    display: flex;
+    justify-content: center;
+}
 
-/* utilities-wrapper class */
+.game-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    width: 70%;
+}
 
-/* moves-wrapper class */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-between;
+}
 
-/* timer-wrapper class */
+.utilities-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2%;
+    padding-top: 5%;
+}
 
-/* field */
+.board-wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 560px;
+    justify-content: center;
+    margin: auto;
+    width: 560px;
+}
 
-/* board-wrapper class */
+.field {
+    align-items: center;
+    background-color: #CCCC04;
+    border: 2px solid #1F1F1F;
+    border-radius: 5px;
+    color: #1F1F1F;
+    display: flex;
+    font-size: 1.4rem;
+    height: 40px;
+    justify-content: center;
+    width: 200px;
+}
 
-/* card class */
+.card {
+    align-items: center;
+    background-color: #AAAA02;
+    border: 2px solid #1F1F1F;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 120px;
+    margin: 10px;
+    width: 120px;
+}
 
-/* giveup-wrapper class */
+.card:hover {
+    background-color: #999901;
+    cursor: pointer;
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
 
-/* popup-wrapper class */
+.front-face {
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+}
+
+.front-face-flip {
+    display: none;
+}
+
+.back-face {
+    display: none;
+}
+
+.back-face-flip {
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+}
+
+.popup-wrapper {
+    display: none;
+}
+
+@media screen and (max-width: 812px) and (max-height: 812px) {
+    .game-wrapper {
+        width: 100vh;
+    }
+
+    .utilities-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .board-wrapper {
+        height: 180px;
+        width: 360px;
+    }
+    
+    .field {
+        font-size: 1rem;
+        height: 30px;
+        width: 110px;
+    }
+    
+    .card {
+        height: 70px;
+        margin: 5px;
+        width: 70px;
+    }
+}
 
 /* popup class */
 
@@ -24,4 +130,4 @@
 
 /* popup-content */
 
-/* hour, minutes, seconds classes */ 
+/* hour, minutes, seconds classes */

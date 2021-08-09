@@ -14,56 +14,33 @@
 
 <body>
     <div class="game-wrapper">
-        <div class="utilities-wrapper">
-            <div class="moves-wrapper">
-                <div class="field">
-                    <span class="moves">0</span> moves
+        <div class="wrapper">
+            <div class="utilities-wrapper">
+                <div class="moves-wrapper">
+                    <div class="field">
+                        <span class="moves">0</span> moves
+                    </div>
+                </div>
+    
+                <div class="timer-wrapper">
+                    <div class="field">
+                        <p>
+                            <span class="hour">0</span>h
+                            <span class="minutes">0</span>m
+                            <span class="seconds">0</span>s
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <div class="timer-wrapper">
-                <div class="field">
-                    <p>
-                        <span class="hour">0</span>h
-                        <span class="minutes">0</span>m
-                        <span class="seconds">0</span>s
-                    </p>
-                </div>
+    
+            <div class="board-wrapper">
+            </div>
+    
+            <div class="giveup-wrapper">
+                <a href="#" class="button">Give Up</a>
             </div>
         </div>
-
-        <div class="board-wrapper">
-            <!-- these divs will be generated in js, but i put few of these to test css styles first -->
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-            <div class="card"></div>
-        </div>
-
-        <div class="giveup-wrapper">
-            <button class="button">Give Up</button>
-        </div>
-
+        
         <footer>
             <p><strong>Memo Game</strong> was created for educational purposes by <a
                     href="https://github.com/Vesperalin">Klaudia Błażyczek</a></p>
@@ -82,8 +59,8 @@
                 <p>Guessed: <span id="guessed-result"></span> pairs</p>
                 <p>Moves <span id="moves-result"></span></p>
                 <div class="exit-buttons-container">
-                    <button class="button">Save & exit</button>
-                    <button class="button">Exit</button>
+                    <a class="button">Save & exit</a>
+                    <a class="button">Exit</a>
                 </div>
             </div>
         </div>
