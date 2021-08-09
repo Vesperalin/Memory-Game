@@ -12,6 +12,7 @@ let availableCardsNames = [
 let gameLevel = localStorage.getItem("level");
 let board = document.querySelector('.board-wrapper');
 let movesCounterElement = document.querySelector('.moves');
+availableCardsNames.sort((a, b) => Math.random() - 0.5);
 let cardsNames = availableCardsNames.slice(0, (() => {
     if (gameLevel == 1)
         return 6;
