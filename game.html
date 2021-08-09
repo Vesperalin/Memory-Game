@@ -37,7 +37,7 @@
             </div>
     
             <div class="giveup-wrapper">
-                <a href="index.html" class="button">Give Up</a>
+                <a class="button" onclick="displayPopup()">Give Up</a>
             </div>
         </div>
         
@@ -51,16 +51,16 @@
         <div class="popup">
             <div class="popup-close"><i class="fas fa-times"></i></div>
             <div class="popup-content">
-                <p>
+                <p>Time: 
                     <span class="hour">0</span>h
                     <span class="minutes">0</span>m
                     <span class="seconds">0</span>s
                 </p>
                 <p>Guessed: <span id="guessed-result"></span> pairs</p>
-                <p>Moves <span id="moves-result"></span></p>
+                <p>Moves: <span id="moves-result"></span></p>
                 <div class="exit-buttons-container">
-                    <a class="button">Save & exit</a>
-                    <a class="button">Exit</a>
+                    <a class="button button save-and-exit">Save & exit</a>
+                    <a href="index.html" class="button">Exit</a>
                 </div>
             </div>
         </div>
