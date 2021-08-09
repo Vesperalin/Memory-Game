@@ -158,3 +158,35 @@ popupClose.addEventListener('click', e => {
     popupWrapper.style.display = 'none';
 });
 
+// to jest zapisywanie do localstorage
+const saveAndExitButton = document.querySelector('.save-and-exit');
+saveAndExitButton.addEventListener('click', e => {
+    let results = JSON.parse(localStorage.getItem('results'));
+    if (results == null) {
+        const json = {
+            "easyResults": [],
+            "mediumResults": [],
+            "hardResults": [],
+            "mobileResults": []
+        };
+        localStorage.setItem('results', JSON.stringify(json));
+        results = JSON.parse(localStorage.getItem('results'));
+    }
+
+    const result = [`${timerElement.children[0].textContent}:${timerElement.children[1].textContent}:${timerElement.children[2].textContent}`, `${movesCounterElement.textContent}`, `${guessedPairsCounter}/${pairsAmount}`];
+    
+    if(gameLevel == 0) 
+        results["easyResults"].push(result);
+    else if (gameLevel == 1)
+        results["mediumResults"].push(result);
+    else if (gameLevel == 2)
+        results["hardResults"].push(result);
+    else 
+        results["mobileResults"].push(result);
+
+    localStorage.setItem('results', JSON.stringify(results));
+
+    window.location.replace("index.html");
+});
+
+//localStorage.removeItem('results');
