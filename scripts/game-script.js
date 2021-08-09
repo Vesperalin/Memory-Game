@@ -99,8 +99,10 @@ function resetBoard() {
 }
 
 function checkIfEndOfGame() {
-    if (guessedPairsCounter === pairsAmount)
+    if (guessedPairsCounter === pairsAmount) {
         clearInterval(timer);
+        displayPopup();
+    }    
 }
 
 function unflipCards() {
@@ -109,7 +111,7 @@ function unflipCards() {
         revertFlipEffect(firstCard);
         revertFlipEffect(secondCard);
         resetBoard();
-    }, 1500);
+    }, 1000);
 }
 
 // timer
@@ -137,3 +139,22 @@ const timeCount = () => {
 };
 
 const timer = setInterval(timeCount, 1000);
+
+//popup
+const popupWrapper = document.querySelector('.popup-wrapper');
+const popupContentElement = document.querySelector('.popup-content');
+const popupClose = document.querySelector('.popup-close');
+
+function displayPopup() {
+    popupWrapper.style.display = 'block';
+    popupContentElement.children[0].children[0].textContent = timerElement.children[0].textContent;
+    popupContentElement.children[0].children[1].textContent = timerElement.children[1].textContent;
+    popupContentElement.children[0].children[2].textContent = timerElement.children[2].textContent;
+    popupContentElement.children[1].children[0].textContent = `${guessedPairsCounter}/${pairsAmount}`;
+    popupContentElement.children[2].children[0].textContent = movesCounterElement.textContent;
+}
+
+popupClose.addEventListener('click', e => {
+    popupWrapper.style.display = 'none';
+});
+
