@@ -11,6 +11,7 @@ let availableCardsNames = [
 ];
 let gameLevel = localStorage.getItem("level");
 let board = document.querySelector('.board-wrapper');
+let movesCounterElement = document.querySelector('.moves');
 let cardsNames = availableCardsNames.slice(0, (() => {
     if (gameLevel == 1)
         return 6;
@@ -19,6 +20,8 @@ let cardsNames = availableCardsNames.slice(0, (() => {
     else
         return 4;
 })());
+const pairsAmount = cardsNames.length;
+let guessedPairsCounter = 0;
 
 if (gameLevel == 0)
     board.style.height = "280px";
@@ -71,7 +74,13 @@ function flipCard(self) {
 
 function checkForMatch() {
     let isMatch = firstCard.lastElementChild.src === secondCard.lastElementChild.src;
+    increaseMovesCounter();
     isMatch ? disableCards() : unflipCards();
+}
+
+function increaseMovesCounter() {
+    let moves = parseInt(movesCounterElement.textContent);
+    movesCounterElement.textContent = (moves + 1);
 }
 
 function disableCards() {
@@ -79,7 +88,8 @@ function disableCards() {
     secondCard.removeEventListener("click", flipCard);
     firstCard.removeAttribute("onclick");
     secondCard.removeAttribute("onclick");
-
+    guessedPairsCounter++;
+    checkIfEndOfGame();
     resetBoard();
 }
 
@@ -88,9 +98,13 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+function checkIfEndOfGame() {
+    if (guessedPairsCounter === pairsAmount)
+        clearInterval(timer);
+}
+
 function unflipCards() {
     lockBoard = true;
-
     setTimeout(() => {
         revertFlipEffect(firstCard);
         revertFlipEffect(secondCard);
@@ -98,18 +112,28 @@ function unflipCards() {
     }, 1500);
 }
 
+// timer
+const timerElement = document.querySelector('.timer');
+const timeCount = () => {
+    let hours = timerElement.children[0].textContent;
+    let minutes = timerElement.children[1].textContent;
+    let seconds = timerElement.children[2].textContent;
 
+    seconds = parseInt(seconds) + 1;
 
-/* temp - deletee later */
-let fronts = document.querySelectorAll('.front-face');
-let backs = document.querySelectorAll('.back-face');
-//console.log(fronts);
-/*fronts.forEach(e => {
-    console.log('a');
-    console.log(e);
-    e.style.display = "none";
-});
-backs.forEach(e => {
-    e.style.display = "inline-block";
-});*/
+    if (seconds === 60) {
+        seconds = 0;
+        minutes = parseInt(minutes) + 1;
 
+        if (minutes === 60) {
+            minutes = 0;
+            hours = parseInt(hours)++;
+        }
+    }
+
+    timerElement.children[0].textContent = hours;
+    timerElement.children[1].textContent = minutes;
+    timerElement.children[2].textContent = seconds;
+};
+
+const timer = setInterval(timeCount, 1000);
