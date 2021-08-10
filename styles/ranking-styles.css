@@ -39,6 +39,8 @@ footer {
 
 .ranking {
     align-items: center;
+    background-color: rgbA(204, 204, 4, 0.1);
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
 }

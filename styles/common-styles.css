@@ -32,7 +32,11 @@ footer {
 
 footer a {
     text-decoration: underline;
-    color: #8A8A06;
+    color: #686804;
+}
+
+footer a:hover {
+    color: #464602;
 }
 
 .button {
