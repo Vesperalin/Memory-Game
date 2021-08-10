@@ -103,7 +103,7 @@ function checkIfEndOfGame() {
     if (guessedPairsCounter === pairsAmount) {
         clearInterval(timer);
         displayPopup();
-    }    
+    }
 }
 
 function unflipCards() {
@@ -159,7 +159,42 @@ popupClose.addEventListener('click', e => {
     popupWrapper.style.display = 'none';
 });
 
-// to jest zapisywanie do localstorage
+// own comparator of results
+// compares by: guessed pairs, then time, then amount of moves
+const compareResults = (a, b) => {
+    if (a[2] === b[2]) {
+        if (a[0] === b[0]) {
+            if (a[1] === b[1]) {
+                return 0;
+            }
+            // different moves amount
+            else {
+                return a[1] - b[1];
+            }
+        // different time
+        } else {
+            timeOfA = a[0].split(":");
+            timeOfB = b[0].split(":");
+            if(timeOfA[0] === timeOfB[0]) {
+                if (timeOfA[1] === timeOfB[1]) {
+                    return timeOfA[2] - timeOfB[2];
+                }
+                // different minutes amount
+                else {
+                    return timeOfA[1] - timeOfB[1];
+                }
+            // diffetent hours amount
+            } else {
+                return timeOfA[0] - timeOfB[0];
+            }
+        }
+    // different amount of guessed pairs
+    } else {
+        return b[2] - a[2];
+    } 
+};
+
+// saving to localstorage
 const saveAndExitButton = document.querySelector('.save-and-exit');
 saveAndExitButton.addEventListener('click', e => {
     let results = JSON.parse(localStorage.getItem('results'));
@@ -174,19 +209,38 @@ saveAndExitButton.addEventListener('click', e => {
         results = JSON.parse(localStorage.getItem('results'));
     }
 
-    const result = [`${timerElement.children[0].textContent}:${timerElement.children[1].textContent}:${timerElement.children[2].textContent}`, `${movesCounterElement.textContent}`, `${guessedPairsCounter}/${pairsAmount}`];
-    
-    if(gameLevel == 0) 
-        results["easyResults"].push(result);
-    else if (gameLevel == 1)
-        results["mediumResults"].push(result);
-    else if (gameLevel == 2)
-        results["hardResults"].push(result);
-    else 
-        results["mobileResults"].push(result);
+    const result = [`${timerElement.children[0].textContent}:${timerElement.children[1].textContent}:${timerElement.children[2].textContent}`, `${movesCounterElement.textContent}`, `${guessedPairsCounter}`];
+    let levelKeyName;
+
+    if (gameLevel == 0) {
+        levelKeyName = "easyResults";
+    } else if (gameLevel == 1) {
+        levelKeyName = "mediumResults";
+    } else if (gameLevel == 2) {
+        levelKeyName = "hardResults";
+    } else {
+        levelKeyName = "mobileResults";
+    }
+        
+    let ifInserted = false;
+    if (results[`${levelKeyName}`].length < 3) {
+        results[`${levelKeyName}`].push(result);
+        results[`${levelKeyName}`].sort(compareResults);
+    } else {
+        for (let i = 0; i < results[`${levelKeyName}`].length; i++) {
+            const compareResult = compareResults(results[`${levelKeyName}`][i], result);
+            if (compareResult > 0 && !ifInserted) {
+                results[`${levelKeyName}`].splice(i, 0, result);
+                results[`${levelKeyName}`].pop();
+                ifInserted = true;
+            } else if (i === results[`${levelKeyName}`].length - 1 && !ifInserted){
+                alert("This result will not be saved, because it is worse than your top 3 results");
+            }
+        }
+    }
 
     localStorage.setItem('results', JSON.stringify(results));
-
+    popupWrapper.style.display = 'none';
     window.location.replace("index.html");
 });
 
