@@ -171,11 +171,11 @@ const compareResults = (a, b) => {
             else {
                 return a[1] - b[1];
             }
-        // different time
+            // different time
         } else {
             timeOfA = a[0].split(":");
             timeOfB = b[0].split(":");
-            if(timeOfA[0] === timeOfB[0]) {
+            if (timeOfA[0] === timeOfB[0]) {
                 if (timeOfA[1] === timeOfB[1]) {
                     return timeOfA[2] - timeOfB[2];
                 }
@@ -183,15 +183,15 @@ const compareResults = (a, b) => {
                 else {
                     return timeOfA[1] - timeOfB[1];
                 }
-            // diffetent hours amount
+                // diffetent hours amount
             } else {
                 return timeOfA[0] - timeOfB[0];
             }
         }
-    // different amount of guessed pairs
+        // different amount of guessed pairs
     } else {
         return b[2] - a[2];
-    } 
+    }
 };
 
 // saving to localstorage
@@ -209,39 +209,44 @@ saveAndExitButton.addEventListener('click', e => {
         results = JSON.parse(localStorage.getItem('results'));
     }
 
-    const result = [`${timerElement.children[0].textContent}:${timerElement.children[1].textContent}:${timerElement.children[2].textContent}`, `${movesCounterElement.textContent}`, `${guessedPairsCounter}`];
-    let levelKeyName;
+    if (guessedPairsCounter === 0) {
+        alert("Results of game with 0 guessed pairs, can not be saved to ranking");
+        popupWrapper.style.display = 'none';
+    } else {
+        const result = [`${timerElement.children[0].textContent}:${timerElement.children[1].textContent}:${timerElement.children[2].textContent}`, `${movesCounterElement.textContent}`, `${guessedPairsCounter}`];
+        let levelKeyName;
 
-    if (gameLevel == 0) {
-        levelKeyName = "easyResults";
-    } else if (gameLevel == 1) {
-        levelKeyName = "mediumResults";
-    } else if (gameLevel == 2) {
-        levelKeyName = "hardResults";
-    } else {
-        levelKeyName = "mobileResults";
-    }
-        
-    let ifInserted = false;
-    if (results[`${levelKeyName}`].length < 3) {
-        results[`${levelKeyName}`].push(result);
-        results[`${levelKeyName}`].sort(compareResults);
-    } else {
-        for (let i = 0; i < results[`${levelKeyName}`].length; i++) {
-            const compareResult = compareResults(results[`${levelKeyName}`][i], result);
-            if (compareResult > 0 && !ifInserted) {
-                results[`${levelKeyName}`].splice(i, 0, result);
-                results[`${levelKeyName}`].pop();
-                ifInserted = true;
-            } else if (i === results[`${levelKeyName}`].length - 1 && !ifInserted){
-                alert("This result will not be saved, because it is worse than your top 3 results");
+        if (gameLevel == 0) {
+            levelKeyName = "easyResults";
+        } else if (gameLevel == 1) {
+            levelKeyName = "mediumResults";
+        } else if (gameLevel == 2) {
+            levelKeyName = "hardResults";
+        } else {
+            levelKeyName = "mobileResults";
+        }
+
+        let ifInserted = false;
+        if (results[`${levelKeyName}`].length < 3) {
+            results[`${levelKeyName}`].push(result);
+            results[`${levelKeyName}`].sort(compareResults);
+        } else {
+            for (let i = 0; i < results[`${levelKeyName}`].length; i++) {
+                const compareResult = compareResults(results[`${levelKeyName}`][i], result);
+                if (compareResult > 0 && !ifInserted) {
+                    results[`${levelKeyName}`].splice(i, 0, result);
+                    results[`${levelKeyName}`].pop();
+                    ifInserted = true;
+                } else if (i === results[`${levelKeyName}`].length - 1 && !ifInserted) {
+                    alert("This result will not be saved, because it is worse than your top 3 results");
+                }
             }
         }
-    }
 
-    localStorage.setItem('results', JSON.stringify(results));
-    popupWrapper.style.display = 'none';
-    window.location.replace("index.html");
+        localStorage.setItem('results', JSON.stringify(results));
+        popupWrapper.style.display = 'none';
+        window.location.replace("index.html");
+    }
 });
 
 //localStorage.removeItem('results');
