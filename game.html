@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memo Game</title>
+    <link rel="stylesheet" href="styles/common-styles.css">
+    <link rel="stylesheet" href="styles/game-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2433752446.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="game-wrapper">
+        <div class="wrapper">
+            <div class="utilities-wrapper">
+                <div class="moves-wrapper">
+                    <div class="field">
+                        <span class="moves">0</span>&nbspmoves
+                    </div>
+                </div>
+    
+                <div class="timer-wrapper">
+                    <div class="field">
+                        <p class="timer">
+                            <span class="hour">0</span>h
+                            <span class="minutes">0</span>m
+                            <span class="seconds">0</span>s
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="board-wrapper">
+            </div>
+    
+            <div class="giveup-wrapper">
+                <a class="button" onclick="displayPopup()">Give Up</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>Memo Game</strong> was created for educational purposes by <a
+                    href="https://github.com/Vesperalin">Klaudia Błażyczek</a></p>
+        </footer>
+    </div>
+
+    <div class="popup-wrapper">
+        <div class="popup">
+            <div class="popup-close"><i class="fas fa-times"></i></div>
+            <div class="popup-content">
+                <p>Time: 
+                    <span class="hour">0</span>h
+                    <span class="minutes">0</span>m
+                    <span class="seconds">0</span>s
+                </p>
+                <p>Guessed: <span id="guessed-result"></span> pairs</p>
+                <p>Moves: <span id="moves-result"></span></p>
+                <div class="exit-buttons-container">
+                    <a class="button button save-and-exit">Save & exit</a>
+                    <a href="index.html" class="button">Exit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/game-script.js"></script>
+</body>
+
+</html>

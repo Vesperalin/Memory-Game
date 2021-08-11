@@ -1,0 +1,84 @@
+/* styles specific for results.html page - mobile first design*/
+
+h2 {
+    color: #CCCC04;
+    font-size: 1.6rem;
+    margin: 5px auto 30px auto;
+    text-align: center;
+}
+
+h3 {
+    color: #8A8A06;
+    font-size: 1.4rem;
+    margin: 10px auto;
+    text-align: center;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.result p {
+    color: #1F1F1F;
+    text-align: center;
+}
+
+.result {
+    line-height: 1.3;
+    margin: 20px auto;
+}
+
+.results-wrapper {
+    background: url(../images/background.svg) 80% 80%/cover no-repeat #F9FAED;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.ranking {
+    align-items: center;
+    background-color: rgbA(204, 204, 4, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking-column {
+    max-width: 50%;
+}
+
+@media screen and (min-width: 660px) {
+    .results-wrapper {
+        align-items: center;
+    }
+    .ranking {
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 900px;
+        width: 100%;
+    }
+    .ranking-column {
+        margin-left: 2%;
+        margin-right: 2%;
+        max-width: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h2 {
+        font-size: 2.1rem;
+    }
+    h3 {
+        font-size: 1.7rem;
+    }
+    .result {
+        font-size: 1.3rem;
+        line-height: 1.5;
+    }
+    .ranking-column {
+        min-width: 200px;
+    }
+}
