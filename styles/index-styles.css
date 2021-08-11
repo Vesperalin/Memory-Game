@@ -31,3 +31,12 @@ ul li:nth-child(1), ul li:nth-child(2), ul li:nth-child(3) {
         display: none;
     }
 }
+
+@media screen and (max-width: 812px) and (max-height: 375px) {
+    header h1 {
+        padding-top: 40px;
+    }
+    nav {
+        margin-top: 20px;
+    }
+}
